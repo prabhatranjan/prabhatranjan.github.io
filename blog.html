@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog - Insights on AI, technology leadership, and digital transformation">
+    <title>Blog | Prabhat Ranjan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Prabhat Ranjan</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero" style="padding: 100px 0 60px; min-height: auto;">
+        <div class="container">
+            <h1 class="hero-title" style="font-size: 3rem;">Blog</h1>
+            <p class="hero-description">Insights on AI, technology leadership, and digital transformation</p>
+        </div>
+    </section>
+
+    <!-- Blog Filter -->
+    <section style="padding: 40px 0; background: var(--light-bg);">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <button class="filter-btn active" data-filter="all" style="padding: 0.6rem 1.5rem; border: none; background: var(--primary-color); color: white; border-radius: 20px; cursor: pointer; font-weight: 600;">All Posts</button>
+                <button class="filter-btn" data-filter="ai" style="padding: 0.6rem 1.5rem; border: 2px solid var(--primary-color); background: transparent; color: var(--primary-color); border-radius: 20px; cursor: pointer; font-weight: 600;">AI & ML</button>
+                <button class="filter-btn" data-filter="leadership" style="padding: 0.6rem 1.5rem; border: 2px solid var(--primary-color); background: transparent; color: var(--primary-color); border-radius: 20px; cursor: pointer; font-weight: 600;">Leadership</button>
+                <button class="filter-btn" data-filter="product" style="padding: 0.6rem 1.5rem; border: 2px solid var(--primary-color); background: transparent; color: var(--primary-color); border-radius: 20px; cursor: pointer; font-weight: 600;">Product</button>
+                <button class="filter-btn" data-filter="tech" style="padding: 0.6rem 1.5rem; border: 2px solid var(--primary-color); background: transparent; color: var(--primary-color); border-radius: 20px; cursor: pointer; font-weight: 600;">Technology</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section style="padding: 60px 0 80px;">
+        <div class="container">
+            <div class="blog-grid">
+                <!-- Sample Blog Post 1 -->
+                <article class="blog-card" data-category="ai">
+                    <div class="blog-image">🤖</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 October 2024</span>
+                            <span>🏷️ AI & ML</span>
+                        </div>
+                        <h3>Building Multi-Agent AI Systems: Lessons from the Trenches</h3>
+                        <p>
+                            Architecting a multi-agent AI platform taught me valuable lessons about coordination, 
+                            communication, and scaling AI systems. Here's what I learned about building production-ready 
+                            agentic AI that actually delivers business value.
+                        </p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Sample Blog Post 2 -->
+                <article class="blog-card" data-category="leadership">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">👥</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 September 2024</span>
+                            <span>🏷️ Leadership</span>
+                        </div>
+                        <h3>From Reactive to Proactive: Transforming Engineering Culture</h3>
+                        <p>
+                            How we achieved 99.9% uptime by shifting from firefighting to prevention. A practical guide 
+                            to building a proactive engineering culture that prioritizes reliability and system health.
+                        </p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Sample Blog Post 3 -->
+                <article class="blog-card" data-category="product">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">📱</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 August 2024</span>
+                            <span>🏷️ Product</span>
+                        </div>
+                        <h3>The Stabilize-Sustain-Scale Framework: A Product Leader's Playbook</h3>
+                        <p>
+                            A proven framework that helped us achieve 3x revenue growth. Learn how to systematically 
+                            move from chaos to scale while maintaining product quality and team morale.
+                        </p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Sample Blog Post 4 -->
+                <article class="blog-card" data-category="tech">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">☁️</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 July 2024</span>
+                            <span>🏷️ Technology</span>
+                        </div>
+                        <h3>Cloud Cost Optimization: Real Strategies That Saved 60% on AWS</h3>
+                        <p>
+                            Practical, battle-tested strategies for reducing cloud costs without sacrificing performance 
+                            or reliability. From infrastructure simplification to right-sizing resources.
+                        </p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Sample Blog Post 5 -->
+                <article class="blog-card" data-category="ai">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">🎯</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 June 2024</span>
+                            <span>🏷️ AI & ML</span>
+                        </div>
+                        <h3>RAG Systems in Production: Beyond the POC</h3>
+                        <p>
+                            Moving from a proof-of-concept to a production RAG system involves solving challenges that 
+                            tutorials don't cover. Here's what you need to know about retrieval quality, latency, and scale.
+                        </p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Sample Blog Post 6 -->
+                <article class="blog-card" data-category="leadership">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">📊</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 May 2024</span>
+                            <span>🏷️ Leadership</span>
+                        </div>
+                        <h3>Scaling Teams While Improving Efficiency: A Counterintuitive Approach</h3>
+                        <p>
+                            How we achieved 41% team reduction while maintaining output. The story of operational 
+                            excellence through automation, process improvement, and strategic focus.
+                        </p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Add More Blog Posts Here -->
+                <!-- Template for new blog post:
+                <article class="blog-card" data-category="CATEGORY">
+                    <div class="blog-image" style="background: GRADIENT;">EMOJI</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 DATE</span>
+                            <span>🏷️ CATEGORY</span>
+                        </div>
+                        <h3>TITLE</h3>
+                        <p>DESCRIPTION</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section style="padding: 60px 0; background: var(--light-bg);">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Stay Updated</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                    Subscribe to get notified about new blog posts on AI, technology leadership, and digital transformation.
+                </p>
+                <form style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                    <input type="email" placeholder="Your email address" style="padding: 0.8rem 1.5rem; border: 2px solid var(--border-color); border-radius: 8px; flex: 1; min-width: 250px; font-family: inherit;">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Want to Discuss These Topics Further?</h2>
+            <p>I'm always interested in connecting with fellow technology leaders and innovators.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary-large">Get In Touch</a>
+                <a href="https://linkedin.com/in/prabhatsngp" class="btn btn-secondary-large" target="_blank">Connect on LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Prabhat Ranjan</h3>
+                    <p>AI-Driven Technology Executive</p>
+                    <p>Singapore</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:prs.nus@gmail.com">Email</a></li>
+                        <li><a href="https://linkedin.com/in/prabhatsngp" target="_blank">LinkedIn</a></li>
+                        <li><a href="tel:+6583508503">+65-8350-8503</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prabhat Ranjan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
