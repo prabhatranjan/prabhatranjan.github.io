@@ -5,11 +5,11 @@ Use this checklist to personalize your website with your information.
 ## 🎯 Priority 1: Essential Updates (Do First!)
 
 ### Contact Information
-- [ ] **Email**: Search and replace `prs.nus@gmail.com` with your email
+- [ ] **Email**: 
   - Files: All HTML files (footer sections)
-  - Command: Find "prs.nus@gmail.com" → Replace with "your@email.com"
+  - Command: Replace with "your@email.com"
 
-- [ ] **Phone**: Replace `+65-8350-8503` with your phone
+- [ ] **Phone**: 
   - Files: All HTML files (footer and contact page)
   - Format: Include country code (e.g., +1-555-1234)
 

@@ -49,8 +49,8 @@ A complete, professional portfolio website with:
 Before or after deploying, update with your information:
 
 ### Must Update (5 minutes)
-1. Email: Replace `prs.nus@gmail.com` with yours
-2. Phone: Replace `+65-8350-8503` with yours  
+1. Email: Replace with yours
+2. Phone: Replace with yours  
 3. LinkedIn: Update the LinkedIn URL
 4. Location: Change "Singapore" to your location
 
