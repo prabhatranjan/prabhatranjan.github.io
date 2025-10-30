@@ -47,7 +47,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 20px;
+    padding: 0.8rem 20px;
 }
 
 .logo {
@@ -55,6 +55,37 @@ body {
     font-weight: 700;
     color: var(--text-light);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-pic {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.logo:hover .profile-pic {
+    transform: scale(1.05);
+    border-color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .logo span {
+        display: none;
+    }
+}
+
+.logo-text {
     background: var(--gradient-2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
