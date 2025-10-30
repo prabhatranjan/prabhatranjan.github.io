@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Strategies for optimizing cloud costs effectively">
+    <title>Cloud Cost Optimization | Prabhat Ranjan</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="../../assets/js/components.js" defer></script>
+    <style>
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        .blog-header {
+            margin-bottom: 3rem;
+        }
+        .blog-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .blog-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .blog-content {
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <main class="container">
+        <a href="../../blog.html" class="back-link">← Back to Blog</a>
+        
+        <article class="blog-post">
+            <header class="blog-header">
+                <div class="blog-meta">
+                    <span>📅 July 2024</span>
+                    <span>🏷️ Technology</span>
+                </div>
+                <h1 class="blog-title">Cloud Cost Optimization: Real Strategies That Saved 60% on AWS</h1>
+            </header>
+            
+            <div class="blog-content">
+                <p>Cloud costs have a tendency to spiral. What starts as a modest monthly AWS bill can balloon into a budget-busting expense that makes your CFO schedule urgent meetings. I've been there, and I've helped multiple teams claw their way back from unsustainable cloud spending.</p>
+
+                <p>This isn't another listicle of theoretical best practices. These are the actual strategies that helped us reduce our AWS costs by 60% over six months—without degrading performance, sacrificing reliability, or forcing our engineers into operational hell.</p>
+
+                <h2>The Wake-Up Call</h2>
+                <p>Our AWS bill had grown from $50K to $180K monthly over two years. Revenue hadn't tripled. Neither had our user base. We had simply accumulated cloud debt—unused resources, oversized instances, and architectural decisions made during rapid growth that were never revisited.</p>
+                <p>The first step wasn't optimization. It was visibility.</p>
+
+                <h2>Strategy 1: Establish Real Cost Visibility</h2>
+                <p>You can't optimize what you can't measure. Most teams glance at their AWS Cost Explorer once a quarter and call it monitoring. That's not enough.</p>
+                
+                <h3>What we did:</h3>
+                <p>We implemented comprehensive tagging across every resource—environment, team, product, and cost center. Then we set up AWS Cost and Usage Reports exported to S3, feeding into our own analytics dashboard. This gave us granular visibility into which teams, products, and services were driving costs.</p>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4 style="margin-top: 0;">The impact:</h4>
+                    <p>We discovered that one legacy microservice we thought was "small" was consuming $12K monthly in data transfer costs alone. Another team's development environment was running production-sized databases 24/7. These weren't optimization problems—they were awareness problems.</p>
+                    <p><strong>Saved:</strong> 8% immediately by shutting down forgotten resources and dev environments running needlessly.</p>
+                </div>
+
+                <h2>Strategy 2: Right-Size Everything (But Actually Do It)</h2>
+                <p>Everyone knows about right-sizing. Few people do it systematically because it's tedious and risky. We needed a methodical approach.</p>
+                
+                <h3>What we did:</h3>
+                <p>We used AWS Compute Optimizer recommendations as a starting point, but didn't blindly follow them. For each recommendation, we:</p>
+                <ul>
+                    <li>Analyzed actual utilization patterns over 30 days, not just averages</li>
+                    <li>Identified services with predictable load patterns vs. bursty workloads</li>
+                    <li>Tested smaller instance types in staging with realistic load tests</li>
+                    <li>Made changes during low-traffic windows with instant rollback plans</li>
+                </ul>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4 style="margin-top: 0;">The impact:</h4>
+                    <p>About 40% of our EC2 instances were oversized by at least one instance type. Many were running two or three sizes larger than necessary. RDS databases were even worse offenders.</p>
+                    <p><strong>Saved:</strong> 18% from right-sizing alone.</p>
+                </div>
+
+                <h2>Strategy 3: Embrace Graviton Processors</h2>
+                <p>AWS Graviton instances offer better price-performance than comparable x86 instances, but many teams avoid them because of perceived compatibility issues. We found the transition easier than expected.</p>
+                
+                <h3>What we did:</h3>
+                <p>Our applications were containerized, which made the switch straightforward. We updated our Docker builds to support ARM64 architecture and tested thoroughly. Most modern languages and frameworks have excellent ARM support. The few libraries that didn't had alternatives.</p>
+                <p>We migrated workloads incrementally, starting with stateless services that were easy to roll back. Within two months, 70% of our compute had moved to Graviton instances.</p>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4 style="margin-top: 0;">The impact:</h4>
+                    <p>Graviton instances are typically 20% cheaper than equivalent x86 instances while offering comparable or better performance. For our workloads, we saw equal or slightly better performance at lower cost.</p>
+                    <p><strong>Saved:</strong> 12% by switching to Graviton where compatible.</p>
+                </div>
+
+                <h2>Strategy 4: Leverage Savings Plans and Reserved Instances Strategically</h2>
+                <p>Commitment-based discounts are the most obvious way to save, yet many companies either avoid them entirely (leaving money on the table) or over-commit (losing flexibility).</p>
+                
+                <h3>What we did:</h3>
+                <p>We analyzed our baseline usage—the compute capacity we'd been running consistently for 12+ months—and covered that with Compute Savings Plans. These are more flexible than Reserved Instances and apply across instance families and regions.</p>
+                <p>For predictable, steady-state workloads like databases, we used Reserved Instances with one-year terms. We avoided three-year commitments because our infrastructure was still evolving.</p>
+                <p>We covered roughly 60% of our usage with commitments, leaving 40% on-demand for growth and experimentation.</p>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4 style="margin-top: 0;">The impact:</h4>
+                    <p>Savings Plans and Reserved Instances provide 30-70% discounts depending on commitment level and term. By thoughtfully covering our baseline usage without over-committing, we captured significant savings while maintaining flexibility.</p>
+                    <p><strong>Saved:</strong> 15% from strategic commitment-based discounts.</p>
+                </div>
+
+                <h2>Strategy 5: Optimize Data Transfer Costs</h2>
+                <p>Data transfer is the silent budget killer. It's easy to overlook because it accumulates gradually, but it often represents 10-20% of cloud costs.</p>
+                
+                <h3>What we did:</h3>
+                <p>We identified our highest data transfer costs through Cost and Usage Reports. The biggest culprit was cross-region replication of S3 data that didn't need to be replicated. We also had services in different availability zones chattering excessively due to chatty APIs.</p>
+                <p>Solutions included:</p>
+                <ul>
+                    <li>Consolidating services into fewer availability zones where possible</li>
+                    <li>Implementing caching layers to reduce repeated data transfers</li>
+                    <li>Using VPC endpoints for S3 and DynamoDB access (no data transfer charges)</li>
+                    <li>Compressing data before transfer</li>
+                    <li>Eliminating unnecessary cross-region replication</li>
+                </ul>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4 style="margin-top: 0;">The impact:</h4>
+                    <p>Data transfer optimizations often yield disproportionate savings because they address waste rather than necessary capacity.</p>
+                    <p><strong>Saved:</strong> 4% by optimizing data transfer patterns.</p>
+                </div>
+
+                <h2>Strategy 6: Implement Intelligent Auto-Scaling</h2>
+                <p>Most teams either don't use auto-scaling or implement it poorly. We were in the latter camp—our auto-scaling policies were conservative to the point of being useless.</p>
+                
+                <h3>What we did:</h3>
+                <p>We rebuilt our auto-scaling policies based on actual traffic patterns. For web services, we scaled on request latency and queue depth rather than just CPU. For background workers, we scaled based on queue length.</p>
+                <p>We also implemented scheduled scaling for predictable patterns. Our traffic dropped by 60% overnight; our infrastructure should too.</p>
+                <p>We used AWS Lambda and Fargate for appropriate workloads, achieving true zero-cost scaling for sporadic tasks.</p>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4 style="margin-top: 0;">The impact:</h4>
+                    <p>Proper auto-scaling meant we ran smaller baseline capacity and scaled precisely to demand. Our infrastructure now tracked our traffic patterns rather than remaining perpetually oversized.</p>
+                    <p><strong>Saved:</strong> 7% from improved auto-scaling and serverless adoption.</p>
+                </div>
+
+                <h2>Strategy 7: Storage Lifecycle Management</h2>
+                <p>S3 storage seems cheap until you have petabytes of it. We were storing everything in S3 Standard, paying premium prices for data that was rarely accessed.</p>
+                
+                <h3>What we did:</h3>
+                <p>We implemented S3 Lifecycle policies to automatically transition objects to cheaper storage classes based on access patterns:</p>
+                <ul>
+                    <li>Infrequently accessed data (30+ days) moved to S3 Standard-IA</li>
+                    <li>Archives (90+ days) moved to S3 Glacier</li>
+                    <li>Truly old data (1+ years) moved to S3 Glacier Deep Archive</li>
+                    <li>Unnecessary logs and temporary files were deleted automatically</li>
+                </ul>
+                <p>We also enabled S3 Intelligent-Tiering for data with unpredictable access patterns.</p>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                    <h4 style="margin-top: 0;">The impact:</h4>
+                    <p>Storage costs dropped dramatically. Moving infrequently accessed data from S3 Standard ($0.023/GB) to S3 Glacier ($0.004/GB) provided 80%+ savings on that data.</p>
+                    <p><strong>Saved:</strong> 3% from storage optimization.</p>
+                </div>
+
+                <h2>The Results</h2>
+                <p>Over six months, we reduced our AWS bill from $180K to $72K monthly—a 60% reduction. More importantly, we built sustainable practices:</p>
+                <ul>
+                    <li>Monthly cost review meetings with engineering leads</li>
+                    <li>Automated alerts when costs deviate from expected patterns</li>
+                    <li>Quarterly right-sizing reviews</li>
+                    <li>Cost considerations in architectural review processes</li>
+                </ul>
+                <p>Performance and reliability didn't suffer. In fact, some services performed better after optimization because we were being more intentional about our infrastructure choices.</p>
+
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li><strong>Start with visibility.</strong> You can't optimize what you don't understand. Invest in tagging, monitoring, and cost allocation first.</li>
+                    <li><strong>Think holistically.</strong> The biggest savings came from combining multiple strategies, not from any single optimization.</li>
+                    <li><strong>Make it sustainable.</strong> One-time optimization projects don't work. Build cost awareness into your engineering culture and processes.</li>
+                    <li><strong>Don't sacrifice reliability.</strong> We never compromised on redundancy, backups, or disaster recovery. All optimizations maintained or improved our availability.</li>
+                    <li><strong>Test carefully.</strong> Every significant change was tested in staging and deployed with monitoring and rollback plans.</li>
+                </ul>
+
+                <p>Cloud cost optimization isn't about spending less—it's about spending intelligently. The goal isn't the cheapest possible infrastructure; it's the right infrastructure at the right price. With systematic approaches and continuous attention, substantial savings are achievable without compromising what matters.</p>
+
+                <p>Your CFO will thank you. Your engineers will appreciate the efficiency. And your infrastructure will actually make sense again.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer></footer>
+    <script src="../../script.js"></script>
+</body>
+</html>
