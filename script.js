@@ -77,20 +77,26 @@ if (contactForm) {
     });
 }
 
-// Add scroll effect to navbar
+// Navbar scroll effect
 let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+// Wait for components to load
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
     
-    if (currentScroll <= 0) {
-        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-    } else {
-        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            }
+            
+            lastScroll = currentScroll;
+        });
     }
-    
-    lastScroll = currentScroll;
 });
 
 // Blog filter functionality (if blog page)
