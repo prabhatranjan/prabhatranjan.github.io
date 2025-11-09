@@ -144,6 +144,8 @@ body {
     min-height: 90vh;
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-container {
@@ -177,6 +179,62 @@ body {
     margin: 0 auto 3rem;
     color: #cbd5e1;
     line-height: 1.8;
+}
+
+.hero-immersive {
+    background-image: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.8), rgba(37, 99, 235, 0.55)),
+                      url('https://images.unsplash.com/photo-1526378722484-cc2a29f7c2c1?auto=format&fit=crop&w=1800&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(226, 232, 240, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-size: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.hero-highlight {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 20px 40px rgba(2, 6, 23, 0.3);
+}
+
+.hero-highlight .label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.6rem;
+}
+
+.hero-highlight h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.hero-highlight p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
 }
 
 .hero-stats {
