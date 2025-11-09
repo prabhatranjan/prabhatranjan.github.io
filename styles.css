@@ -35,12 +35,15 @@ body {
 
 /* Navigation */
 .navbar {
-    background: var(--dark-bg);
+    background: rgba(4, 7, 20, 0.85);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.25);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-container {
@@ -182,10 +185,31 @@ body {
 }
 
 .hero-immersive {
-    background-image: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.8), rgba(37, 99, 235, 0.55)),
-                      url('https://images.unsplash.com/photo-1526378722484-cc2a29f7c2c1?auto=format&fit=crop&w=1800&q=80');
-    background-size: cover;
-    background-position: center;
+    background: #050914;
+}
+
+.hero-immersive::before,
+.hero-immersive::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-immersive::before {
+    background: url('https://images.unsplash.com/photo-1526378722484-cc2a29f7c2c1?auto=format&fit=crop&w=2000&q=85') center/cover;
+    opacity: 0.4;
+    filter: saturate(1.1);
+}
+
+.hero-immersive::after {
+    background: linear-gradient(135deg, rgba(2, 6, 23, 0.92), rgba(10, 18, 40, 0.9), rgba(37, 99, 235, 0.55));
+}
+
+.hero-immersive .hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-pill {
